@@ -3,6 +3,7 @@ plugins {
     alias(nyfs.plugins.mdg.loader)
     alias(nyfs.plugins.mod.publish)
     alias(nyfs.plugins.regutils.loader)
+    id("com.nyfaria.moddingtools.dependencies")
 }
 
 neoForge {
@@ -35,6 +36,13 @@ neoForge {
 sourceSets.main.resources { srcDir project(":common").file('src/generated/resources').getAbsolutePath() }
 
 dependencies {
+    implementation "curse.maven:jade-324717:6011258"
+    implementation "curse.maven:jei-238222:5846880"
+    implementation "curse.maven:glitchcore-955399:5660740"
+    implementation "curse.maven:serene-seasons-291874:5753503"
+    runtimeOnly "curse.maven:patchouli-306770:6164617"
+//    implementation nyfs.dynamictrees.neoforge
+    implementation 'curse.maven:dynamictrees-252818:7513464'
 }
 
 publishMods {

@@ -14,7 +14,10 @@ dependencies {
     }
     modImplementation nyfs.fabric.loader
     modImplementation nyfs.fabric.api
+    modImplementation nyfs.config.api.fabric
+    modImplementation(nyfs.dynamictrees.fabric)
 }
+
 
 loom {
     def aw = project(":common").file("src/main/resources/${mod_id}.accesswidener")

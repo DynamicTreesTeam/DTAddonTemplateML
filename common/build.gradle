@@ -2,8 +2,8 @@ plugins {
     id 'multiloader-common'
     alias(nyfs.plugins.mdg.loader)
     alias(nyfs.plugins.regutils.loader)
+    id("com.nyfaria.moddingtools.dependencies")
 }
-
 neoForge {
     neoFormVersion = nyfs.versions.neoFormVersion.get()
     def at = file('src/main/resources/META-INF/accesstransformer.cfg')
@@ -15,11 +15,15 @@ neoForge {
         mappingsVersion = nyfs.versions.parchmentVersion.get()
     }
 }
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor(1, "seconds")
+}
 
 dependencies {
     compileOnly(nyfs.bundles.mixin.common.get())
     annotationProcessor nyfs.mixin.extras.common.get()
     compileOnly nyfs.config.api.common.get()
+    compileOnly(nyfs.dynamictrees.common)
 }
 
 configurations {

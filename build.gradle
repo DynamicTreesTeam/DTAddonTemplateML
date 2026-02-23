@@ -4,9 +4,12 @@ plugins {
     alias(nyfs.plugins.mdg) apply false
     alias(nyfs.plugins.regutils)
 }
+configurations.all {
+    resolutionStrategy.cacheDynamicVersionsFor(1, "seconds")
+}
 
 registrationUtils {
-    group "com.nyfaria.${mod_id}.registration"
+    group "${project.group}.${mod_id}.registration"
     projects {
         fabric {
             type 'fabric'

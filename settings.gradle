@@ -10,10 +10,14 @@ pluginManagement {
 
 plugins {
     id 'org.gradle.toolchains.foojay-resolver-convention' version '0.8.0'
-    id 'com.nyfaria.moddingtools' version '1.0.4'
+    id 'com.nyfaria.moddingtools' version '1.1.2'
 }
 
-rootProject.name = "NyfsMultiLoader-Template"
+nyfsModdingTools {
+    clearCache=true
+}
+
+rootProject.name = "DTAddonTemplateML"
 include("common")
 include("fabric")
 include("neoforge")
